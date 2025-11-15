@@ -27,8 +27,8 @@ Parameters:
   AWSAccessKeyId:
     Type: String
     Description: 'AWS Access Key ID for IMDS spoofing (e.g., AKIA...)'
-    MinLength: 16
-    MaxLength: 128
+    MinLength: "16"
+    MaxLength: "128"
     AllowedPattern: '^[A-Z0-9]+$'
     ConstraintDescription: 'Must be a valid AWS Access Key ID format'
     NoEcho: true
@@ -36,15 +36,15 @@ Parameters:
   AWSSecretAccessKey:
     Type: String
     Description: 'AWS Secret Access Key for IMDS spoofing'
-    MinLength: 16
-    MaxLength: 2048
+    MinLength: "16"
+    MaxLength: "2048"
     NoEcho: true
 
   AWSSessionToken:
     Type: String
     Description: 'Optional: AWS Session Token (leave default if not provided)'
     Default: 'IQoJb3Jpz2cXpQRkpVX3Uf////////////xMdLZHNjbmtGZ2NhL//////////wPbEVN6UGVwIgJ7I5bAOpTzLKpWxIb7sZR74Dq9MNYW/3kThIUWKqDNCoZP+iSbXHHTZuSILnIlFfnT+QcPnlS/tOzaGPxwhuFFnhpMKVtQqgfhWtdMFUPbUPxbtIIhVqPpueagIfbsAjbRRCvrLkRylooW+JDmiqymJQzeReoiWqCnSgzyvYnsSVZRHeNANqYFq/aMqTJ/KvXlbtbzjTPNHahpZXGamgvAtniqkJqhBYGPGQaGKi+cPqqEZdYIYPzMaYjtJgNtGmBoDxkKQeKRVlEtpkAdWMjXXWYm+BnddxxrNAnBcNwrjBtSp/OpQdjvhFfahhKxyEDinpjDkkRrfWTdkmwaMmOjDBHbtUotMJPekH+KtArZuX+HsSAoNfZlwHhnvFTC+jFqgwXelfAfOhrDxlEvadqCAGLOVKLBBtQjFwrXkDmHccVVdUZZEkzQqLuYRlMWVgUpJZQroHHK/uEBiYRYKrpdkEhcWwYPRkPagFLYzdWRTnhxtHGoNNTyq/EHBOKog+rtYUH+QJ+MBYf/ALKSUzIzij/WNH/bNfkVpqPdYPMYtmfk/CBpXoDgj+VweJZJGzHdXP/zBlvqvmHaswckLfSVWtoNLspdlNJUua+JMy/QxlEeghQiNPMmixPv+Ofn/IpLsHmhFYRceGt+EcVKKayGicwSiUXPFG/JafLNLNwQjMVbMb+WGm/CMsYfnNengS/XYYh/hRXNnSQzzcmscXjouqKhzmWhc/HGc+/wNRmrtFVwhTldmFAxiqmScziGDFvxlXeoEThIqKoVBqeqLiWNBeDzjKlwfVbiyFtQfrXWFwzVvTtJ+rDjLPk+SVgapQVRwpGlAUtjEkbuLyCYqLeO/uqGhKJhMZKjNTQ/aVPXkWR/CGxTmLWuEMZQFuSWlIFqYvyyfPHWQPCWDPwnjkGkkjNrJUhfkOXNpHAnBNHYpXUMidzsggFUccMzJIuqVLGAKgUENdRxsqqJiR+FbOgpnjaKEzyqWcLjiGDxMVpIdNqyWuJniNCRqyFKLkDsCi+MejhGVMVSr'
-    MaxLength: 2048
+    MaxLength: "2048"
     NoEcho: true
 
   VpcId:
@@ -142,6 +142,10 @@ Resources:
           echo "=== IMDSpoof Honeypot Installation Started ==="
           echo "Timestamp: $(date)"
 
+          # Get Instance ID from real IMDS before it gets spoofed
+          INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
+          echo "Instance ID: $INSTANCE_ID"
+
           # Update system
           echo "[1/8] Updating system packages..."
           dnf update -y
@@ -234,7 +238,7 @@ Resources:
 
           echo "=== IMDSpoof Honeypot Installation Completed ==="
           echo "Instance is ready for workshop use"
-          echo "Access via: aws ssm start-session --target ${IMDSpoofInstance}"
+          echo "Access via: aws ssm start-session --target $INSTANCE_ID"
 
 Outputs:
   InstanceId:

@@ -1,0 +1,22 @@
+[
+  {
+    "ParameterKey": "AWSAccessKeyId",
+    "ParameterValue": "AKIAIOSFODNN7EXAMPLE"
+  },
+  {
+    "ParameterKey": "AWSSecretAccessKey",
+    "ParameterValue": "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+  },
+  {
+    "ParameterKey": "AWSSessionToken",
+    "ParameterValue": "IQoJb3Jpz2cXpQRkpVX3Uf////////////xMdLZHNjbmtGZ2NhL//////////wPbEVN6UGVwIgJ7I5bAOpTzLKpWxIb7sZR74Dq9MNYW/3kThIUWKqDNCoZP+iSbXHHTZuSILnIlFfnT+QcPnlS/tOzaGPxwhuFFnhpMKVtQqgfhWtdMFUPbUPxbtIIhVqPpueagIfbsAjbRRCvrLkRylooW+JDmiqymJQzeReoiWqCnSgzyvYnsSVZRHeNANqYFq/aMqTJ/KvXlbtbzjTPNHahpZXGamgvAtniqkJqhBYGPGQaGKi+cPqqEZdYIYPzMaYjtJgNtGmBoDxkKQeKRVlEtpkAdWMjXXWYm+BnddxxrNAnBcNwrjBtSp/OpQdjvhFfahhKxyEDinpjDkkRrfWTdkmwaMmOjDBHbtUotMJPekH+KtArZuX+HsSAoNfZlwHhnvFTC+jFqgwXelfAfOhrDxlEvadqCAGLOVKLBBtQjFwrXkDmHccVVdUZZEkzQqLuYRlMWVgUpJZQroHHK/uEBiYRYKrpdkEhcWwYPRkPagFLYzdWRTnhxtHGoNNTyq/EHBOKog+rtYUH+QJ+MBYf/ALKSUzIzij/WNH/bNfkVpqPdYPMYtmfk/CBpXoDgj+VweJZJGzHdXP/zBlvqvmHaswckLfSVWtoNLspdlNJUua+JMy/QxlEeghQiNPMmixPv+Ofn/IpLsHmhFYRceGt+EcVKKayGicwSiUXPFG/JafLNLNwQjMVbMb+WGm/CMsYfnNengS/XYYh/hRXNnSQzzcmscXjouqKhzmWhc/HGc+/wNRmrtFVwhTldmFAxiqmScziGDFvxlXeoEThIqKoVBqeqLiWNBeDzjKlwfVbiyFtQfrXWFwzVvTtJ+rDjLPk+SVgapQVRwpGlAUtjEkbuLyCYqLeO/uqGhKJhMZKjNTQ/aVPXkWR/CGxTmLWuEMZQFuSWlIFqYvyyfPHWQPCWDPwnjkGkkjNrJUhfkOXNpHAnBNHYpXUMidzsggFUccMzJIuqVLGAKgUENdRxsqqJiR+FbOgpnjaKEzyqWcLjiGDxMVpIdNqyWuJniNCRqyFKLkDsCi+MejhGVMVSr"
+  },
+  {
+    "ParameterKey": "VpcId",
+    "ParameterValue": "vpc-0123456789abcdef0"
+  },
+  {
+    "ParameterKey": "SubnetId",
+    "ParameterValue": "subnet-0123456789abcdef0"
+  }
+]
